@@ -1,0 +1,65 @@
+Sneaker Supply Chain:
+
+Woven (tecido):
+hash: 0x626c756500000000000000000000000000000000000000000000000000000000
+sub items: []
+name: woven
+producer: xpto
+date: 01-01-2022
+info: woven for assemble the sneaker
+
+Plastic:
+hash: 0x626c756500000000000000000000000000000000000000000000000000000001
+sub items: []
+name: plastic
+producer: xyz
+date: 01-01-2022
+info: plastic for assemble the sneaker
+
+Pallet:
+hash: 0x626c756500000000000000000000000000000000000000000000000000000002
+sub items: []
+name: pallet
+producer: abc
+date: 01-01-2022
+info: pallet to produce the midsole
+
+Outsole:
+hash: 0x626c756500000000000000000000000000000000000000000000000000000003
+sub items: []
+name: outsole
+producer: abc
+date: 01-01-2022
+info: outsole to produce the sole
+
+Midsole:
+hash: 0x626c756500000000000000000000000000000000000000000000000000000004
+sub items: [pallet]
+name: midsole
+producer: abc
+date: 15-01-2022
+info: midsole to produce the sole
+
+
+Sole:
+hash: 0x626c756500000000000000000000000000000000000000000000000000000005
+sub items: [outsole, midsole]
+name: sole
+producer: abc
+date: 01-02-2022
+info: midsole and outsole assembled. Will be used to produce the sneaker
+
+
+Sneaker:
+hash: 0x626c756500000000000000000000000000000000000000000000000000000006
+sub items: [woven, plastic, sole]
+name: midsole
+producer: nike
+date: 01-03-2022
+info: Air Jordan 12 (Flu Game) ready to go to the distribution center
+
+
+
+
+
+

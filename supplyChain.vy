@@ -5,12 +5,14 @@
 struct Item:
   # Lista que armazena os hashs dos sub itens deste item
   subItems: DynArray[bytes32, 100]
+  # Armazena o nome
+  name: String[100]
   # Armazena o produtor
   producer: String[100]
   # Armazena a data de produção
   date: String[100]
   # Informações do item
-  info: String[100]
+  info: String[200]
   # Verifica se o item é valido (para poder ser sub item de outro item, posteriormente)
   valid: bool
 
@@ -28,13 +30,14 @@ def __init__():
 
 
 @external
-def create_item(itemHash: bytes32, producer: String[100], date: String[100], info: String[100]):
+def create_item(itemHash: bytes32, name: String[100], producer: String[100], date: String[100], info: String[200]):
     # Testa se é o dono do contrato
     assert msg.sender == self.owner
 
     # Cria um item, sem adicionar sub itens, e adiciona na Supply Chain
     self.supplyChain[itemHash] =  Item({
         subItems: [],
+        name: name,
         producer: producer,
         date: date,
         info: info,
